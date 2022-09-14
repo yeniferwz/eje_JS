@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let dimensio = prompt("Introdueix la dimensio de la taula: ");
+        let opcio = prompt("Quin tipus de taula vols? (0 --> caracters 1 --> numerics 2 --> imatges): ");
+
+        function imprimirTaulaCaracter(dimensio, opcio, [caracter]) {
+            let htmlStr = "";
+            htmlStr = '<table border=1>';
+            for (let i = 0; i < dimensio; i++) {
+                htmlStr += '<tr>';
+                for (let j = 0; j < dimensio; j++) {
+                    htmlStr += '<td>' + caracter + '</td>';
+                }
+                htmlStr += '</tr>';
+            }
+            htmlStr += '</table>';
+            return htmlStr;
+        }
+
+        function imprimirTaula(dimensio, opcio) {
+            let htmlStr = "";
+            htmlStr = "<table border = 1>";
+            let valor_numeric = parseInt(1);
+            for (let i = 0; i < dimensio; i++) {
+                htmlStr += '<tr>';
+                for (let j = 0; j < dimensio; j++) {
+                    htmlStr += '<td>' + valor_numeric + '</td>';
+                    valor_numeric++;
+                }
+                htmlStr += '</tr>';
+            }
+            htmlStr += '</table>';
+            return htmlStr;
+        }
+
+        function imprimirTaulaImatges(dimensio, opcio) {
+            let htmlStr = "";
+            htmlStr = "<table border = 1>";
+            for (let i = 0; i < dimensio; i++) {
+                htmlStr += '<tr>';
+                for (let j = 0; j < dimensio; j++) {
+                    htmlStr += '<td><img src="https://picsum.photos/200/300"></td>';
+                }
+                htmlStr += '</tr>';
+            }
+            htmlStr += '</table>';
+            return htmlStr;
+        }
+
+        
+        if(opcio == 0){
+            caracter = prompt("Quin caracter vols: ");
+            document.write(imprimirTaulaCaracter(dimensio, opcio, [caracter]));
+        }else if(opcio == 1){
+            document.write(imprimirTaula(dimensio, opcio));
+        }else if(opcio == 2){
+            document.write(imprimirTaulaImatges(dimensio, opcio));
+        }
+        
+        /*
+        switch (opcio) {
+            case 0:
+                caracter = prompt("Quin caracter vols: ");
+                document.write(imprimirTaulaCaracter(dimensio, opcio, [caracter]));
+                break;
+            case 1:
+                document.write(imprimirTaula(dimensio, opcio));
+                break;
+            case 2:
+                document.write(imprimirTaulaImatges(dimensio, opcio));
+                break;
+            default:
+        }*/
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

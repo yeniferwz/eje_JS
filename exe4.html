@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var array = [];
+        const MAX_ARRAY = 3;
+        function task(){  
+            if(array.length < MAX_ARRAY)
+            {
+                let item = document.getElementById('ip1').value;
+                array.push(item);
+                document.getElementById('list').innerHTML = array.toString();
+            }else{
+                alert('Only 10 Items allowed!')
+            }
+            let pr=array.length;
+            document.getElementById('len').innerHTML=pr;  
+        }
+    </script>
+    <script src="text/javascript"></script>
+</head>
+<body>
+    <!--table>tr*3>td*5{X}-->
+    <div id='div3'>
+        <input type='number' id='ip1' placeholder='Enter values'></input>
+        <br/>
+        <label id='list' >List values are: </label>
+        <br/>
+        <button id='bt3' onClick='task()'>ADD Value</button>
+    </div>
+</body>
+</html>
